@@ -33,9 +33,7 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch(
-      'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hoc/aggregation/data/data.json'
-    )
+    fetch(process.env.REACT_APP_JSON)
       .then((result) => result.json())
       .then((data) => this.setState(data));
   }
